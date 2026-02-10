@@ -1,10 +1,9 @@
 #pragma once
-if !defined(GRID.H)
-#define GRID.H
+#if !defined(GRID_H)
+#define GRID_H
 
 #include "Framework.h"
 #include <vector>
-#include <iostream>
 
 using namespace std;
 
@@ -21,6 +20,8 @@ public:
 	void SetCell(int x, int y, ECellState state);
 	ECellState GetCell(int x, int y) const;
 
+	void RandomizeGrid(float aliveProbability = 0.3f);
+
 	void Update();
 	int CountLiveNeighbours(int x, int y) const;
 
@@ -33,6 +34,14 @@ public:
 	void SetPattern_Toad(int startX, int startY);
 	void SetPattern_Loaf(int startX, int startY);
 	void SetPattern_Glider(int startX, int startY);
+	void SetPattern_Beacon(int startX, int startY);
+	void SetPattern_Pulsar(int startX, int startY);
+	void SetPattern_Pentadecathlon(int startX, int startY);
+	void SetPattern_GosperGliderGun(int startX, int startY);
+	void SetPattern_Tub(int startX, int startY);
+	void SetPattern_LightweightSpaceship(int startX, int startY);
+	void SetPattern_MiddleweightSpaceship(int startX, int startY);
+	void setPattern_HeavyweightSpaceship(int startX, int startY);
 
 	int GetWidth() const { return mWidth; }
 	int GetHeight() const { return mHeight; }
@@ -46,3 +55,5 @@ private:
 	int mHeight;
 	int mCellSize;
 };
+
+#endif
